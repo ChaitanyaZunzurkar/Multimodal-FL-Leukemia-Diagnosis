@@ -7,7 +7,7 @@ import {
   UploadCloud, Image as ImageIcon, Info, Microscope, RotateCcw, 
   Activity, CheckCircle2, AlertCircle, ShieldAlert, Network, 
   Database, Server, Loader2, FileCheck2, Target, ScanLine, FlaskConical,
-  Download, FileText, BookOpen, AlertTriangle
+  Download, FileText, BookOpen, AlertTriangle, Lock, Eye, Heart, ShieldCheck
 } from 'lucide-react';
 
 interface PredictionResponse {
@@ -781,6 +781,79 @@ export default function LeukemiaDiagnosis() {
           </div>
         )}
       </main>
+
+      {/* Trust & Privacy Footer */}
+      <footer className="border-t border-white/5 bg-slate-900/30 backdrop-blur-sm mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {/* Three-pillar trust grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            {/* Privacy by Design */}
+            <div className="flex items-start gap-4">
+              <div className="p-2.5 bg-cyan-500/10 rounded-lg border border-cyan-500/20 shrink-0">
+                <Lock className="w-5 h-5 text-cyan-400" />
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-200 mb-1">Privacy by Design</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Built on Federated Learning — raw patient data never leaves institutional boundaries. Only encrypted model gradients are aggregated.
+                </p>
+              </div>
+            </div>
+
+            {/* Clinical Safety */}
+            <div className="flex items-start gap-4">
+              <div className="p-2.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20 shrink-0">
+                <ShieldCheck className="w-5 h-5 text-emerald-400" />
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-200 mb-1">Clinical Safety</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Monte Carlo Dropout quantifies prediction uncertainty. Grad-CAM ensures visual interpretability for every diagnosis.
+                </p>
+              </div>
+            </div>
+
+            {/* Ethical AI */}
+            <div className="flex items-start gap-4">
+              <div className="p-2.5 bg-purple-500/10 rounded-lg border border-purple-500/20 shrink-0">
+                <Eye className="w-5 h-5 text-purple-400" />
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-200 mb-1">Transparent & Ethical AI</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Every prediction is accompanied by full XAI explanations — feature attributions and visual attention maps — ensuring no black-box decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/5 pt-8">
+            {/* Disclaimer strip */}
+            <div className="bg-amber-950/20 border border-amber-800/30 rounded-xl px-5 py-4 flex items-start gap-3 mb-8">
+              <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+              <p className="text-xs text-amber-200/80 leading-relaxed">
+                <span className="font-semibold text-amber-200">Clinical Disclaimer:</span> This system is a CDSS prototype for research and educational purposes only. It is not a substitute for professional medical diagnosis. Always consult a qualified hematologist or oncologist.
+              </p>
+            </div>
+
+            {/* Bottom bar */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-md">
+                  <Network className="w-3 h-3 text-white" />
+                </div>
+                <span className="text-slate-400 font-medium">Federated Leukemia Diagnostics</span>
+                <span className="text-slate-600">{"\u00B7"}</span>
+                <span>Multimodal AI Pipeline</span>
+              </div>
+              <div className="flex items-center gap-1 text-slate-500">
+                {"Built"}{" for safer, privacy-preserving healthcare AI"}
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
